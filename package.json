@@ -1,0 +1,35 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "utils for js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config=config/webpack.dev.js",
+    "build": "webpack --config=config/webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "warrenyang@tencent.com",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.6.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "postcss-loader": "^2.1.5",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "uglifyjs-webpack-plugin": "^1.2.6",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
+  },
+  "dependencies": {}
+}
