@@ -7,9 +7,9 @@
 `npm install wii-fe-utils`
 
 ### 目前有以下几种工具
-> * [查找对象中的值或者key](#Find)
-> * [比较两个对象是否是相同的对象](#IsSameObj)
-> * [时间处理相关工具，时间格式互转等](#TimeUtils)
+> * [查找对象中的值或者key](#一、查找对象中的值或者key)
+> * [比较两个对象是否是相同的对象](#二、比较两个对象是否是相同的对象)
+> * [时间处理相关工具](#三、时间处理相关工具)
 
 #### <span id="Find">一、查找对象中的值或者key</span>  
 
@@ -48,4 +48,4 @@ Find(toFind, obj, type)
 
 #### <span id="IsSameObj">二、比较两个对象是否是相同的对象</span>
 
-#### <span id="TimeUtils">三、时间处理相关工具，时间格式互转等</span>
+#### <span id="TimeUtils">三、时间处理相关工具</span>
