@@ -18,7 +18,8 @@ let object2 = {
 	}
 }
 
-console.log('Find -----> ', Find('yang', object, 'value'))
+console.log('Find value -----> ', Find('yang', object, 'value'))
+console.log('Find key -----> ', Find('first_name', object, 'key'))
 
 console.log('IsSameObj -----> ', IsSameObj(object, object2))
 
