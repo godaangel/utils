@@ -11,7 +11,7 @@
 > * [比较两个对象是否是相同的对象](#比较两个对象是否是相同的对象)
 > * [时间处理相关工具](#时间处理相关工具)
 
-#### <span id="Find">查找对象中的值或者key</span>  
+### <span id="Find">查找对象中的值或者key</span>  
 
 该工具主要用来查找某个对象中的值或者key。  
 
@@ -46,6 +46,6 @@ Find(toFind, obj, type)
 // type -> 查找类型，支持两种类型 'key' 和 'value'，默认value
 ```
 
-#### <span id="IsSameObj">比较两个对象是否是相同的对象</span>
+### <span id="IsSameObj">比较两个对象是否是相同的对象</span>
 
-#### <span id="TimeUtils">时间处理相关工具</span>
+### <span id="TimeUtils">时间处理相关工具</span>
