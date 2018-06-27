@@ -2,6 +2,8 @@ import Find from './core/find/index'
 import IsSameObj from './core/compare/object'
 import TimeUtils from './core/time/index'
 
+import ImageLoader from './core/image/loader'
+
 let object = {
 	key: 'index',
 	name: {
@@ -43,3 +45,8 @@ let nowDate = TimeUtils.nowDate()
 console.log(nowDate)
 
 console.log('<----- TimeUtils end -----> ')
+
+new ImageLoader(document.getElementsByTagName('img'))
+new ImageLoader(document.getElementById('first_img'))
+
+

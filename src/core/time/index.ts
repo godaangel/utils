@@ -10,7 +10,7 @@ class TimeUtils {
     this.formatData = format;
   }
 
-  static nowDate(format = 'yyyy-MM-dd'){
+  static nowDate(format: string = 'yyyy-MM-dd'): string{
   	let date = new Date();
     return this.format(date, format);
   }
@@ -23,7 +23,7 @@ class TimeUtils {
    * @param    {Date}   time 时间
    * @param    {String}   format  时间格式
    */
-  static format(time: Date, format: string = 'yyyy-MM-dd') {
+  static format(time: Date, format: string = 'yyyy-MM-dd'): string {
     let o = {
       "M+": time.getMonth() + 1, //月份 
       "d+": time.getDate(), //日 
@@ -49,7 +49,7 @@ class TimeUtils {
    * @param    {[type]}   timestamp 时间戳
    * @param    {String}   format    日期格式，默认yyyy-MM-dd
    */
-  static timestampToTime(timestamp: number = new Date().getTime(), format: string = 'yyyy-MM-dd') {
+  static timestampToTime(timestamp: number = new Date().getTime(), format: string = 'yyyy-MM-dd'): string {
   	//时间戳为10位需*1000，时间戳为13位的话不需乘1000
   	if(timestamp.toString().length == 10){
   		timestamp = timestamp * 1000;
@@ -58,7 +58,7 @@ class TimeUtils {
     return this.format(date, format);
   }
 
-  static timeToTimestamp(date: string){
+  static timeToTimestamp(date: string): number{
   	let time = new Date(date).getTime();
   	return time;
   }
