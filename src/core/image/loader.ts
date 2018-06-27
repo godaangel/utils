@@ -1,5 +1,6 @@
 /**
  * 用于图片加载时对图片的加载中和错误进行处理
+ * 未完成
  */
 
 class ImageLoader {
@@ -20,7 +21,7 @@ class ImageLoader {
 
     this.tobase64()
 
-    console.log(image.length)
+    console.log(image)
     if(!image.length){
       console.log(image, document.defaultView.getComputedStyle(image).width)
     }else{

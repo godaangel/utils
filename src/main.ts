@@ -46,7 +46,13 @@ console.log(nowDate)
 
 console.log('<----- TimeUtils end -----> ')
 
-new ImageLoader(document.getElementsByTagName('img'))
-new ImageLoader(document.getElementById('first_img'))
+// new ImageLoader(document.getElementsByTagName('img'))
+// new ImageLoader(document.getElementById('first_img'))
 
+
+import IsType from './core/type/index'
+console.log(IsType({}, 'NullObject'))
+
+import {RandomStr, RandomNum} from './core/random/index'
+console.log(RandomStr(8), RandomNum(0, 10))
 
