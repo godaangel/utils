@@ -2,7 +2,7 @@ import Find from './core/find/index'
 import IsSameObj from './core/compare/object'
 import TimeUtils from './core/time/index'
 
-import ImageLoader from './core/image/loader'
+// import ImageLoader from './core/image/loader'
 
 let object = {
 	key: 'index',
@@ -51,8 +51,18 @@ console.log('<----- TimeUtils end -----> ')
 
 
 import IsType from './core/type/index'
-console.log(IsType({}, 'NullObject'))
+console.log('IsType -----> ', IsType({}, 'NullObject'))
 
 import {RandomStr, RandomNum} from './core/random/index'
-console.log(RandomStr(8), RandomNum(0, 10))
+console.log('RandomStr, RandomNum -----> ', RandomStr(8), RandomNum(0, 10))
+
+import {getUrlParam} from './core/url/index'
+console.log('getUrlParam -----> ', getUrlParam('id'), getUrlParam('name'))
+
+import {setCookie, getCookie, delCookie} from './core/cookie/index'
+
+setCookie('user_id', RandomStr(8))
+console.log('getCookie user_id -----> ', getCookie('user_id'))
+delCookie('user_id')
+console.log('after delCookie user_id -----> ', getCookie('user_id'))
 

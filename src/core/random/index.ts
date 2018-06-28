@@ -10,7 +10,7 @@ let RandomStr = function(len: number): string {　　
   len = len || 32
   let $chars: string = 'abcdefhijkmnprstwxyz2345678' /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/ 　　
   let maxPos: number = $chars.length
-  let pwd: string
+  let pwd: string = ''
   for (let i = 0; i < len; i++) {
     pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
   }
