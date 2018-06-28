@@ -19,7 +19,16 @@ class ImageLoader {
   private init(): void {
   	let image: any = this.element
 
-    this.tobase64()
+    let defaultColor: string = this.tobase64(document.defaultView.getComputedStyle(image[0]).width, document.defaultView.getComputedStyle(image[0]).height)
+
+    var img =new Image();
+    img.onload =function(){
+      img.onload =null;
+      image[0].src = img.src
+    }
+
+    img.src = image[0].src
+    image[0].src = defaultColor
 
     console.log(image)
     if(!image.length){
@@ -35,20 +44,22 @@ class ImageLoader {
   // 需要色块转base64，需要试试canvas是否靠谱
   // 转base64以后需要测试是否会触发onload事件直接略过图片
   
-  private tobase64(): string {
+  private tobase64(width, height): string {
     let canvas = document.createElement('canvas'),
-      ctx = canvas.getContext('2d')
-
-    canvas.height = 120
-    canvas.width = 120
-    ctx.fillStyle = '#ccc'
+      ctx = canvas.getContext('2d');
+    width = width.replace('px', '');
+    height = height.replace('px', '');
+    console.log('width, height  ', width, height)
+    canvas.height = width
+    canvas.width = height
+    ctx.fillStyle="#FF0000";
+    ctx.fillRect(0,0,width,height);
 
     var dataURL = canvas.toDataURL('image/png')
 
     console.log(dataURL)
     return dataURL
   }
-
 
 }
 
