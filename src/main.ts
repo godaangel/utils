@@ -66,3 +66,20 @@ console.log('getCookie user_id -----> ', getCookie('user_id'))
 delCookie('user_id')
 console.log('after delCookie user_id -----> ', getCookie('user_id'))
 
+function foo() {
+  console.log('You are scrolling!');
+}
+
+function foo2() {
+  console.log('Throttle You are scrolling!');
+}
+
+// 防抖
+import Debounce from './core/refunction/debounce'
+window.addEventListener('scroll', Debounce(foo, 2000, true));
+
+// 节流
+import Throttle from './core/refunction/throttle'
+window.addEventListener('scroll', Throttle(foo2, 2000));
+
+

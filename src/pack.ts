@@ -5,6 +5,8 @@ import IsType from './core/type/index'
 import {RandomStr, RandomNum} from './core/random/index'
 import {getUrlParam} from './core/url/index'
 import {setCookie, getCookie, delCookie} from './core/cookie/index'
+import Debounce from './core/refunction/debounce'
+import Throttle from './core/refunction/throttle'
 
 export {
 	Find,
@@ -22,5 +24,8 @@ export {
 
 	setCookie,
 	getCookie,
-	delCookie
+	delCookie,
+
+	Debounce,
+	Throttle
 }
