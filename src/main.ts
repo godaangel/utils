@@ -35,13 +35,8 @@ Ctp(dateUtils.timestamp, dateUtils.formatData)
 let date = TimeUtils.format(new Date(), 'yyyy-MM-dd hh:mm:ss')
 Ctp('format ---> ', date)
 
-<<<<<<< HEAD
-let date2 = TimeUtils.timestampToTime(<any> 1529836067986, 'yyyy-MM-dd hh:mm:ss')
-console.log(date2)
-=======
 let date2 = TimeUtils.timestampToTime(<any> 1403058804, 'yyyy-MM-dd hh:mm:ss')
 Ctp('timestampToTime ---> ', date2)
->>>>>>> 4f256c66bd6fa937c6ff606bb3de20a17c94886b
 
 let date3 = TimeUtils.timeToTimestamp('2018-05-06 10:08:11')
 Ctp('timeToTimestamp ---> ', date3)
