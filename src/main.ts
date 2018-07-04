@@ -1,8 +1,8 @@
+import Ctp from './program/console-to-page';
+Ctp('欢迎使用')
 import Find from './core/find/index'
 import IsSameObj from './core/compare/object'
 import TimeUtils from './core/time/index'
-
-// import ImageLoader from './core/image/loader'
 
 let object = {
 	key: 'index',
@@ -20,76 +20,74 @@ let object2 = {
 	}
 }
 
-console.log('Find value -----> ', Find('yang', object, 'value'))
-console.log('Find key -----> ', Find('first_name', object, 'key'))
+Ctp('Find value -----> ', Find('yang', object, 'value'))
+Ctp('Find key -----> ', Find('first_name', object, 'key'))
 
-console.log('IsSameObj -----> ', IsSameObj(object, object2))
+Ctp('IsSameObj -----> ', IsSameObj(object, object2))
 
 
 
-console.log('<----- TimeUtils start -----> ')
+Ctp('<----- TimeUtils start -----> ')
 
 let dateUtils = new TimeUtils()
-console.log(dateUtils.timestamp, dateUtils.formatData)
+Ctp(dateUtils.timestamp, dateUtils.formatData)
 
 let date = TimeUtils.format(new Date(), 'yyyy-MM-dd hh:mm:ss')
-console.log('format ---> ', date)
+Ctp('format ---> ', date)
 
 let date2 = TimeUtils.timestampToTime(<any> 1403058804, 'yyyy-MM-dd hh:mm:ss')
-console.log('timestampToTime ---> ', date2)
+Ctp('timestampToTime ---> ', date2)
 
 let date3 = TimeUtils.timeToTimestamp('2018-05-06 10:08:11')
-console.log('timeToTimestamp ---> ', date3)
+Ctp('timeToTimestamp ---> ', date3)
 
 let nowDate = TimeUtils.nowDate()
-console.log('nowDate ---> ', nowDate)
+Ctp('nowDate ---> ', nowDate)
 
 let addedDate = TimeUtils.addDate(nowDate, 3)
-console.log('addDate 3天以后 ---> ', addedDate)
+Ctp('addDate 3天以后 ---> ', addedDate)
 
 let dateDiff = TimeUtils.dateDiff('2018-07-01', '2018-07-10')
-console.log('dateDiff ---> ', dateDiff)
+Ctp('dateDiff ---> ', dateDiff)
 
-console.log('<----- TimeUtils end -----> ')
-
-// new ImageLoader(document.getElementsByTagName('img'))
-// new ImageLoader(document.getElementById('first_img'))
-
+Ctp('<----- TimeUtils end -----> ')
 
 import IsType from './core/type/index'
-console.log('IsType -----> ', IsType({}, 'NullObject'))
+Ctp('IsType -----> ', IsType({}, 'NullObject'))
 
 import {RandomStr, RandomNum} from './core/random/index'
-console.log('RandomStr, RandomNum -----> ', RandomStr(8), RandomNum(0, 10))
+Ctp('RandomStr, RandomNum -----> ', RandomStr(8), RandomNum(0, 10))
 
 import {getUrlParam} from './core/url/index'
-console.log('getUrlParam -----> ', getUrlParam('id'), getUrlParam('name'))
+Ctp('getUrlParam -----> ', getUrlParam('id'), getUrlParam('name'))
 
-import {setCookie, getCookie, delCookie} from './core/cookie/index'
+import Cookie from './core/cookie/index'
 
-setCookie('user_id', RandomStr(8))
-console.log('getCookie user_id -----> ', getCookie('user_id'))
-delCookie('user_id')
-console.log('after delCookie user_id -----> ', getCookie('user_id'))
+Cookie.set('user_id', RandomStr(8))
+Ctp('Cookie.get user_id -----> ', Cookie.get('user_id'))
+Cookie.del('user_id')
+Ctp('after Cookie.del user_id -----> ', Cookie.get('user_id'))
 
 function foo() {
-  console.log('You are scrolling!');
+  Ctp('You are scrolling!');
 }
 
 function foo2() {
-  console.log('Throttle You are scrolling!');
+  Ctp('Throttle You are scrolling!');
 }
 
 // 防抖
 import Debounce from './core/refunction/debounce'
-window.addEventListener('scroll', Debounce(foo, 2000, true));
+// window.addEventListener('scroll', Debounce(foo, 2000, true));
 
 // 节流
 import Throttle from './core/refunction/throttle'
-window.addEventListener('scroll', Throttle(foo2, 2000));
+// window.addEventListener('scroll', Throttle(foo2, 2000));
 
 
-import {setLocalStorage, getLocalStorage, delLocalStorage} from './core/storage/localStorage'
-import {setSessionStorage, getSessionStorage, delSessionStorage} from './core/storage/sessionStorage'
+import LocalStorage from './core/storage/localStorage'
+Ctp('LocalStorage ------> ', LocalStorage.get('user'), LocalStorage.set('user', 123), LocalStorage.get('user'))
+import SessionStorage from './core/storage/sessionStorage'
+Ctp('SessionStorage ------> ', SessionStorage.get('user'), SessionStorage.set('user', 123), SessionStorage.get('user'))
 
 
