@@ -4,8 +4,9 @@ import TimeUtils from './core/time/index'
 import IsType from './core/type/index'
 import {RandomStr, RandomNum} from './core/random/index'
 import {getUrlParam} from './core/url/index'
-import {setCookie, getCookie, delCookie} from './core/cookie/index'
-import {setStorage, getStorage, delStorage} from './core/storage/index'
+import Cookie from './core/cookie/index'
+import LocalStorage from './core/storage/localStorage'
+import SessionStorage from './core/storage/sessionStorage'
 import Debounce from './core/refunction/debounce'
 import Throttle from './core/refunction/throttle'
 
@@ -23,9 +24,9 @@ export {
 
 	getUrlParam,
 
-	setCookie,
-	getCookie,
-	delCookie,
+	Cookie,
+	LocalStorage,
+  SessionStorage,
 
 	setStorage,
   getStorage,
