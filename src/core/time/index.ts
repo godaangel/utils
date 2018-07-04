@@ -62,6 +62,60 @@ class TimeUtils {
   	let time = new Date(date).getTime();
   	return time;
   }
+
+  /**
+   * 增加日期
+   * @Author   Warrenyang
+   * @DateTime 2018-07-04
+   * @version  [version]
+   * @param    {string}   date 日期，格式为yyyy-MM-dd
+   * @param    {number}   num  日期差值
+   * @return   {string}        返回增加以后的日期
+   */
+  static addDate(date: string, num: number): string { //date是2006-12-18格式 
+    let translateDate = '',
+      dateString = '',
+      monthString = '',
+      dayString = '';
+    translateDate = date.replace('-', '/').replace('-', '/');
+    let newDate: any = new Date(translateDate);
+    newDate = newDate.valueOf();
+    newDate = newDate + num * 24 * 60 * 60 * 1000;
+    newDate = new Date(newDate);
+
+
+    //如果月份长度少于2，则前加 0 补位   
+    if ((newDate.getMonth() + 1).toString().length == 1) {
+      monthString = 0 + '' + (newDate.getMonth() + 1).toString();
+    } else {
+      monthString = (newDate.getMonth() + 1).toString();
+    }
+    //如果天数长度少于2，则前加 0 补位   
+    if (newDate.getDate().toString().length == 1) {
+      dayString = 0 + '' + newDate.getDate().toString();
+    } else {
+      dayString = newDate.getDate().toString();
+    }
+    dateString = newDate.getFullYear() + '-' + monthString + '-' + dayString;
+    return dateString;
+  }
+
+  /**
+   * 日期差值
+   * @Author   Warrenyang
+   * @DateTime 2018-07-04
+   * @version  [version]
+   * @param    {string}   startDate 开始日期
+   * @param    {string}   endDate   结束日期
+   * @return   {number}             相差天数
+   */
+  static dateDiff(startDate: string, endDate: string): number {
+    let startTime: number = new Date(Date.parse(startDate.replace(/-/g, '/'))).getTime();
+    let endTime: number = new Date(Date.parse(endDate.replace(/-/g, '/'))).getTime();
+    let dates: number = Math.abs(((startTime - endTime)) / (1000 * 60 * 60 * 24));
+    return dates;
+  }
+
 }
 
 export default TimeUtils;
