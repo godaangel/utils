@@ -35,7 +35,7 @@ console.log(dateUtils.timestamp, dateUtils.formatData)
 let date = TimeUtils.format(new Date(), 'yyyy-MM-dd hh:mm:ss')
 console.log(date)
 
-let date2 = TimeUtils.timestampToTime(<any> 1403058804, 'yyyy-MM-dd hh:mm:ss')
+let date2 = TimeUtils.timestampToTime(<any> 1529836067986, 'yyyy-MM-dd hh:mm:ss')
 console.log(date2)
 
 let date3 = TimeUtils.timeToTimestamp('2018-05-06 10:08:11')

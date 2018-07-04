@@ -10,6 +10,9 @@ module.exports = merge(common, {
   entry: {
     main: './src/pack.ts'
   },
+  output: {
+    libraryTarget: "umd",
+  },
   // 模块：例如解读css，图片如何转换压缩等
   module: {
     rules: [
