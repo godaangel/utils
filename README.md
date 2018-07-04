@@ -26,7 +26,7 @@
 | obj | 在哪个object对象内查找 | Object |  |  
 | toFind | 查找类型，支持两种类型值 'key' 和 'value' | String | value |  
 
-##### 使用方式
+#### 使用方式
 ```javascript
 // 引入Find方法
 import {Find} from 'wii-fe-utils'
@@ -61,7 +61,7 @@ console.log('Find key -----> ', Find('first_name', object, 'key'))
 | obj2 | 比较的其中一个对象 | Object |  |  
 | deep | 比较方式，是否深比较，默认进行深比较 | Boolean | true |  
 
-##### 使用方式
+#### 使用方式
 ```javascript
 // 引入IsSameObj方法
 import {IsSameObj} from 'wii-fe-utils'
