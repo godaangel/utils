@@ -64,6 +64,6 @@ module.exports = merge(common, {
     //服务端压缩是否开启
     compress: true,
     //配置服务端口号
-    port: 8082
+    port: process.env.PORT || 8080
   }
 });
