@@ -28,10 +28,6 @@ export {
 	LocalStorage,
   SessionStorage,
 
-	setStorage,
-  getStorage,
-  delStorage,
-
 	Debounce,
 	Throttle
 }
