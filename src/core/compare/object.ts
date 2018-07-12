@@ -12,7 +12,7 @@
  * @param    {boolean}  deep 是否深度检查，默认true
  * @return   {boolean}       返回是否相同
  */
-var IsSameObj = function(obj_1: object, obj_2: object, deep: boolean = true) {
+var IsSameObj = function (obj_1: object, obj_2: object, deep: boolean = true) {
   let obj_1_props = Object.getOwnPropertyNames(obj_1);
   let obj_2_props = Object.getOwnPropertyNames(obj_2);
   // 如果长度不符，则返回false
@@ -28,12 +28,12 @@ var IsSameObj = function(obj_1: object, obj_2: object, deep: boolean = true) {
     if (item1 !== item2 && (typeof item1 != 'object') && (typeof item2 != 'object')) {
       // 如果两个都是非对象且不相等
       return false;
-    }else if(deep && ((typeof item1 == 'object') || (typeof item2 == 'object'))){
+    } else if (deep && ((typeof item1 == 'object') || (typeof item2 == 'object'))) {
       // 如果是深度遍历且至少有一个是对象
-      if(!IsSameObj(item1, item2, deep)){
+      if (!IsSameObj(item1, item2, deep)) {
         return false;
       }
-    }else if(!deep && item1 !== item2 && ((typeof item1 == 'object') || (typeof item2 == 'object'))){
+    } else if (!deep && item1 !== item2 && ((typeof item1 == 'object') || (typeof item2 == 'object'))) {
       // 如果非深度遍历且至少一个是对象，两个不相等
       return false;
     }
