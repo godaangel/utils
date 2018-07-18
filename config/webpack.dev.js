@@ -44,6 +44,13 @@ module.exports = merge(common, {
           loader: 'babel-loader',
         },
         exclude: /node_modules/
+      },
+      // 文件解析
+      {
+        test: /\.(png|jpg|gif|svg|jpeg)$/,
+        use: [{
+          loader: 'url-loader'
+        }]
       }
     ]
   },
@@ -64,6 +71,7 @@ module.exports = merge(common, {
     //服务端压缩是否开启
     compress: true,
     //配置服务端口号
-    port: process.env.PORT || 8080
+    port: process.env.PORT || 8080,
+    disableHostCheck: true
   }
 });

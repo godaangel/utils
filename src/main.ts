@@ -90,4 +90,19 @@ Ctp('LocalStorage ------> ', LocalStorage.get('user'), LocalStorage.set('user', 
 import SessionStorage from './core/storage/sessionStorage'
 Ctp('SessionStorage ------> ', SessionStorage.get('user'), SessionStorage.set('user', 123), SessionStorage.get('user'))
 
-
+// 选择图片并获取图片主题色
+import ImageColor from './core/image/color'
+window.document.getElementById('image').onchange = function(evt: any){
+	// console.log(evt.target.files[0])
+	let file = evt.target.files[0]
+	let reader = new FileReader()
+	reader.onload = function() {
+	  // 通过 reader.result 来访问生成的 DataURL
+	  let url = reader.result
+	  let ImageColorObj = new ImageColor(url)
+	  ImageColorObj.getMainColor()
+	};
+	reader.readAsDataURL(file);
+}
+// let ImageColorObj = new ImageColor('./assets/WechatIMG563.jpeg')
+// ImageColorObj.getMainColor()
