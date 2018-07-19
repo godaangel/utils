@@ -14,7 +14,7 @@ class Cookie {
   static set(name: string, value: any, days: number = 30): void {
     let exp = new Date()
     exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000)
-    document.cookie = name + '=' + escape(value) + ';expires=' + exp.toUTCString()
+    document.cookie = name + '=' + escape(value) + ';expires=' + exp.toUTCString()  + ';path=/;'
   }
 
   /**
