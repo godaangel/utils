@@ -72,6 +72,12 @@ module.exports = merge(common, {
     compress: true,
     //配置服务端口号
     port: process.env.PORT || 8080,
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: {
+      '/wau': {
+        target: 'http://wii2app.wiiqq.com',
+        changeOrigin: true
+      },
+    }
   }
 });

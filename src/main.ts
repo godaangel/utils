@@ -78,11 +78,11 @@ function foo2() {
 
 // 防抖
 import Debounce from './core/refunction/debounce'
-// window.addEventListener('scroll', Debounce(foo, 2000, true));
+window.addEventListener('scroll', Debounce(foo, 2000, true));
 
 // 节流
 import Throttle from './core/refunction/throttle'
-// window.addEventListener('scroll', Throttle(foo2, 2000));
+window.addEventListener('scroll', Throttle(foo2, 2000));
 
 
 import LocalStorage from './core/storage/localStorage'
@@ -91,18 +91,30 @@ import SessionStorage from './core/storage/sessionStorage'
 Ctp('SessionStorage ------> ', SessionStorage.get('user'), SessionStorage.set('user', 123), SessionStorage.get('user'))
 
 // 选择图片并获取图片主题色
-import ImageColor from './core/image/color'
-window.document.getElementById('image').onchange = function(evt: any){
-	// console.log(evt.target.files[0])
-	let file = evt.target.files[0]
-	let reader = new FileReader()
-	reader.onload = function() {
-	  // 通过 reader.result 来访问生成的 DataURL
-	  let url = reader.result
-	  let ImageColorObj = new ImageColor(url)
-	  ImageColorObj.getMainColor()
-	};
-	reader.readAsDataURL(file);
-}
+// import ImageColor from './core/image/color'
+// window.document.getElementById('image').onchange = function(evt: any){
+// 	// console.log(evt.target.files[0])
+// 	let file = evt.target.files[0]
+// 	let reader = new FileReader()
+// 	reader.onload = function() {
+// 	  // 通过 reader.result 来访问生成的 DataURL
+// 	  let url: any = reader.result
+// 	  let ImageColorObj = new ImageColor(url)
+// 	  ImageColorObj.getMainColor()
+// 	};
+// 	reader.readAsDataURL(file);
+// }
 // let ImageColorObj = new ImageColor('./assets/WechatIMG563.jpeg')
 // ImageColorObj.getMainColor()
+
+import Request from './core/request/index'
+
+Request('post', '/wau/calendar/get_list', {}, {
+	beforeRequestFunc: (config) => {
+		console.log('-----', config)
+	}
+}).then((res) => {
+	console.log(res)
+}).catch((err) => {
+	console.log(err)
+})
